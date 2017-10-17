@@ -89,6 +89,37 @@ At the end of this iteration, you should see something like this:
 
 Don't forget to allow your users to leave the modal when they click on the close cross.
 
+### Iteration 3 | Breadcrumbs
+
+Breadcrumbs are sometimes useful to help users find their way on a website. But where they shine is for Search Engine Optimization, which is the art of tricking Google into ranking a webpage higher.
+
+If you were only using Bulma, you would include breadcrumbs as follow:
+
+```html
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">Ironhack</a></li>
+    <li><a href="#">Courses</a></li>
+    <li><a href="#">Webdev</a></li>
+    <li class="is-active"><a href="#" aria-current="page">Full-time</a></li>
+  </ul>
+</nav>
+```
+
+For this iteration, you are to define not one component, but two! You will create the component `BulmaBreadcrumbs` for the breadcrumbs and the component `BulmaBreadcrumbLink` for the links inside. They will be used as follows:
+
+```html
+  <bulma-breadcrumbs>
+    <bulma-breadcrumb-link href="#">Ironhack</bulma-breadcrumb-link>
+    <bulma-breadcrumb-link href="#">Courses</bulma-breadcrumb-link>
+    <bulma-breadcrumb-link href="#">Webdev</bulma-breadcrumb-link>
+    <bulma-breadcrumb-link active href="#">Full-time</bulma-breadcrumb-link>
+  </bulma-breadcrumbs>
+```
+
+To put a component inside another component, you will need to use [slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots).
+Also, to be able to use the property `active` as above, you need to specify its type using the object notation (see [prop validation](https://vuejs.org/v2/guide/components.html#Prop-Validation)).
+
 ## Bonus Instructions
 
 ### Bonus 1 | Color the messages
