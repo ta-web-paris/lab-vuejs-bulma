@@ -5,12 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- TODO: include Bulma's style and your own style -->
-  <title>Vue.js | Bulma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css">
+  <script src="https://unpkg.com/vue@2.5.2/dist/vue.js" type="text/javascript"></script>
+  <title>Day 2 -- Bulma and Vue.js</title>
 </head>
 <body>
 
+  <!-- add class container. where? -->
+  <h1>Day 2 -- Bulma and Vue.js</h1>
+
+<div id="app">
+  <message header="Hello Ironhacker" :body="new Date() + 'I created this awesome website during my Ironhack bootcamp.'" color="success"></message>
+  <message header="Close" body="Click the 'x' at the top right corner of this box to close me" color="info"></message>
+</div>
+
+<div id="bulmaModal">
+  <button class="button is-primary" @click="showFrance = true">France</button>
+  <modals head="France" body="Paris has good bread" :show="showFrance" v-on:close="showFrance = false"></modals>
+
+  <button class="button is-primary" @click="showSpain = true">Spain</button>
+  <modals head="Spain" body="Spain has good jamon" :show="showSpain" v-on:close="showSpain = false"></modals>
+
+  <button class="button is-primary" @click="showUK = true">UK</button>
+  <modals head="UK" body="The UK has good weather..." :show="showUK" v-on:close="showUK = false"></modals>
+</div>
+
   <!-- TODO: Include your Vue.js app -->
-  
+
+
   <!-- TODO: Include scripts -->
+    <script src="bulma.js"></script>
 </body>
 </html>
