@@ -4,13 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- TODO: include Bulma's style and your own style -->
-  <title>Vue.js | Bulma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Welcome to my Websiiiite</title>
 </head>
 <body>
+<div id="app">
+  <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Welcome to my Websiiiite
+      </h1>
+    </div>
+  </div>
+</section>
 
-  <!-- TODO: Include your Vue.js app -->
-  
-  <!-- TODO: Include scripts -->
+
+<section class="container">
+    <bulma-message header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp." color="success"></bulma-message>
+
+    <bulma-message header="Close" body="You can close me by clicking on the cross" color="warning"></bulma-message>
+</section>
+
+<section class="hero">
+<div class="hero-body">
+  <div class="container">
+    <h1 class="title">
+      Capital Modals
+    </h1>
+  </div>
+</div>
+</section>
+
+<section class="container">
+
+  <p class="button" v-for="object in capitalArray" @click="showModal(object.countryName, object.capital)">{{ object.countryName }}</p>
+
+  <bulma-modal :show="showCountry" :head="countryName" :body="capital" v-on:close="showCountry = false">
+  </bulma-modal>
+
+</section>
+
+
+
+
+
+</div>
+<script src="https://unpkg.com/vue"></script>
+  <script src="app.js" type="text/javascript"></script>
 </body>
 </html>
