@@ -104,7 +104,7 @@ Use the component in your `index.html` file.
 Find a way to add some colors on your Bulma's messages, like in the following example:
 
 ```html
-<message header="My header" body="My body" color="success"></message>
+<bulma-message header="My header" body="My body" color="success"></bulma-message>
 ```
 
 Allowed colors are:
