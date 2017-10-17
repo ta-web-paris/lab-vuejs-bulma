@@ -64,21 +64,22 @@ You should also find a way to hide the message when the user clicks on the delet
 
 ![Screenshot](https://i.imgur.com/oPqwO3z.png)
 
-
+Use the component in your `index.html` file with the header and the body you like.
 
 ### Iteration 2 | Modal
 
-Now you will integrate the modal component. You will create 3 buttons, representing a country, that trigger a modal with the information of the country:
+Now you will integrate the modal component. You will create 3 buttons, each representing a country, that will open a modal with the information of the country.
+The countries will be:
+
 * **France**: The capital is Paris
 * **Spain**: The capital is Madrid
 * **United-States**: The capital is Washington
 
-Your Vue.js component should have:
-* The id `bulmaModal`
-* Two props: `head` and `body`
-* It should emit a `close` event 
+Your Vue.js component should:
 
-
+* Have the id `bulmaModal`,
+* Require two props: `head` and `body`,
+* Emit a `close` event when it is closed.
 
 At the end of this iteration, you should see something like this:
  
@@ -88,14 +89,36 @@ At the end of this iteration, you should see something like this:
 
 Don't forget to allow your users to leave the modal when they click on the close cross.
 
+### Iteration 3 | Breadcrumbs
 
+Breadcrumbs are sometimes useful to help users find their way on a website. But where they shine is for Search Engine Optimization, which is the art of tricking Google into ranking a webpage higher.
 
+If you were only using Bulma, you would include breadcrumbs as follow:
 
-<!-- ### Iteration 3 | Tabs -->
+```html
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">Ironhack</a></li>
+    <li><a href="#">Courses</a></li>
+    <li><a href="#">Webdev</a></li>
+    <li class="is-active"><a href="#" aria-current="page">Full-time</a></li>
+  </ul>
+</nav>
+```
 
+For this iteration, you are to define not one component, but two! You will create the component `BulmaBreadcrumbs` for the breadcrumbs and the component `BulmaBreadcrumbLink` for the links inside. They will be used as follows:
 
+```html
+  <bulma-breadcrumbs>
+    <bulma-breadcrumb-link href="#">Ironhack</bulma-breadcrumb-link>
+    <bulma-breadcrumb-link href="#">Courses</bulma-breadcrumb-link>
+    <bulma-breadcrumb-link href="#">Webdev</bulma-breadcrumb-link>
+    <bulma-breadcrumb-link active href="#">Full-time</bulma-breadcrumb-link>
+  </bulma-breadcrumbs>
+```
 
-Use the component in your `index.html` file.
+To put a component inside another component, you will need to use [slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots).
+Also, to be able to use the property `active` as above, you need to specify its type using the object notation (see [prop validation](https://vuejs.org/v2/guide/components.html#Prop-Validation)).
 
 ## Bonus Instructions
 
@@ -107,7 +130,7 @@ Find a way to add some colors on your Bulma's messages, like in the following ex
 <bulma-message header="My header" body="My body" color="success"></bulma-message>
 ```
 
-Allowed colors are:
+Make sure that only allowed colors are used. They are the following:
 
 - `dark`
 - `primary`
@@ -117,4 +140,9 @@ Allowed colors are:
 - `warning`
 - `danger`
 
-Hints: you will need to use [class bindings](https://vuejs.org/v2/guide/class-and-style.html) and [prop validation](https://vuejs.org/v2/guide/components.html#Prop-Validation).
+<details>
+ <summary>Hints:</summary>
+<p>
+You will need to use the array notation for [class bindings](https://vuejs.org/v2/guide/class-and-style.html) and a validator for [prop validation](https://vuejs.org/v2/guide/components.html#Prop-Validation).
+</p>
+</details>
