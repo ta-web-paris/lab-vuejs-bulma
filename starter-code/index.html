@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- TODO: include Bulma's style and your own style -->
-  <title>Vue.js | Bulma</title>
-</head>
-<body>
+  <script src="https://unpkg.com/vue@2.5.2/dist/vue.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- TODO: Include your Vue.js app -->
-  
-  <!-- TODO: Include scripts -->
+</head>
+
+<!-- TODO: include Bulma's style and your own style -->
+<title>Vue.js | Bulma</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome to my Bulma Website </h1>
+    <br>
+    <div id="app">
+
+
+      <!-- <article class="message">
+  <div class="message-header">
+    <p>Hello Ironhacker</p>
+    <button class="delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    I created this awesome website during my Ironhack bootcamp.
+  </div>
+</article> -->
+      <message header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp."></message>
+      <br>
+      <!-- TODO: Include your Vue.js app -->
+
+      <!-- TODO: Include scripts -->
+
+      <message header="Close" body="You can close me by clicking on the cross the top right"></message>
+    </div>
+  </div>
+  <script src="index.js" charset="utf-8"></script>
 </body>
+
 </html>
