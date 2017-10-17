@@ -16,6 +16,24 @@ Vue.component("message-diplay", {
   `
 });
 
+Vue.component("message-country", {
+  props: ["country", "capital", "color"],
+  data() {
+    return { show: true };
+  },
+  template: `
+  <article v-show="selected===country" :class='["message", "is-"+color]'>
+    <div class="message-header">
+      <p>{{country}}</p>
+      <button @click="show =!show" class="delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+    {{capital}}
+    </div>
+  </article>
+  `
+});
+
 new Vue({
   el: "#app",
   data: {
@@ -30,6 +48,25 @@ new Vue({
         body: "You can close me by clicking on the cross the top right",
         color: "warning"
       }
-    ]
+    ],
+    capitales: [
+      {
+        country: "France",
+        text: "The capital is Paris",
+        color: "info"
+      },
+      {
+        country: "Spain",
+        text: "The capital is Madrid",
+        color: "info"
+      },
+      {
+        country: "US",
+        text: "The capital is Washington",
+        color: "info"
+      }
+    ],
+    active: false,
+    selected: ""
   }
 });
