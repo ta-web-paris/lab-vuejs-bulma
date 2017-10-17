@@ -39,12 +39,9 @@
 
 <section class="container">
 
-  <p class="button" @click="showModal('France', 'Paris')">France</p>
-  <p class="button" @click="showModal('Spain', 'Madrid')">Spain</p>
-  <p class="button" @click="showModal('USA', 'DC')">USA</p>
+  <p class="button" v-for="object in capitalArray" @click="showModal(object.countryName, object.capital)">{{ object.countryName }}</p>
 
-
-  <bulma-modal :show="showCountry" :head="country" :body="capital" v-on:close="showCountry = false">
+  <bulma-modal :show="showCountry" :head="countryName" :body="capital" v-on:close="showCountry = false">
   </bulma-modal>
 
 </section>
