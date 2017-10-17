@@ -4,8 +4,10 @@
 
 ## Introduction
 
-Bulma is a very nice CSS framework that allow you to display things link message boxes, modals that are called components. You can find a list on its documentation: https://bulma.io/documentation/components/breadcrumb/. In this exercise we will convert some Bulma's components into Vue.js components.
+Bulma is a very nice CSS framework that allows you to display things link message boxes, modals and other nice components. You can find a list on its documentation: https://bulma.io/documentation/components/breadcrumb/.
+However, Bulma components are just CSS classes. They don't have any behaviour.
 
+In this exercise we will define Vue.js components that will use Bulma components. They will add to them the behaviour and modularity we need.
 
 ## Requirements
 
@@ -24,20 +26,19 @@ Navigate to your repo and create a Pull Request -from your master branch to the 
 
 In the Pull request name, add your name and last names separated by a dash "-"
 
-
 ## Instructions
 
-### Iteration 0 | Settle the project
+### Iteration 0 | Setup the project
 
-Write a simple project in your `starter-code`, that includes Bulma, Vue.js and that display a title. We recommand to use the class `container` to make it prettier. At this step, you should see something like this:
-![Screenchot](https://i.imgur.com/RyenWlm.png)
+In the `index.html` file in `starter-code`, include Bulma, Vue.js, and display a title. We recommend you also use the class `container` to make it prettier. At this step, you should see something like this:
+![Screenshot](https://i.imgur.com/RyenWlm.png)
 
 
 ### Iteration 1 | Message
 
 We will begin with the Bulma message component that is described here: https://bulma.io/documentation/components/message/
 
-If you look the documentation, you would probably add this on your `index.html` file:
+If you look at the documentation, this how you would use the component using only Bulma:
 
 ```html
 <article class="message">
@@ -51,19 +52,19 @@ If you look the documentation, you would probably add this on your `index.html` 
 </article>
 ```
 
-The idea is to create a Vue.js component that will do the same by writing this in your `index.html` file:
+With the component you are going to define, the same thing will be done by writing the following:
 
 ```html
 <message header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp."></message>
 ```
 
-You should also find a way to hide the message when the user click on the delete button on the top right of the message.
+Much easier, right?
+
+You should also find a way to hide the message when the user clicks on the delete button in the top right corner.
 
 ![Screenshot](https://i.imgur.com/oPqwO3z.png)
 
-
-
-
+Use the component in your `index.html` file.
 
 ## Bonus Instructions
 
@@ -75,6 +76,14 @@ Find a way to add some colors on your Bulma's messages, like in the following ex
 <message header="My header" body="My body" color="success"></message>
 ```
 
+Allowed colors are:
 
+- `dark`
+- `primary`
+- `link`
+- `info`
+- `success`
+- `warning`
+- `danger`
 
-
+Hints: you will need to use [class bindings](https://vuejs.org/v2/guide/class-and-style.html) and [prop validation](https://vuejs.org/v2/guide/components.html#Prop-Validation).
