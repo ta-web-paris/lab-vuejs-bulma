@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- TODO: include Bulma's style and your own style -->
-  <title>Vue.js | Bulma</title>
-</head>
-<body>
 
-  <!-- TODO: Include your Vue.js app -->
-  
-  <!-- TODO: Include scripts -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+	<title>Vue.js | Bulma</title>
+</head>
+
+<body>
+	<script src="https://unpkg.com/vue"></script>
+	<!-- SCRIPTS -->
+	<div class="container">
+		<div class="title">
+			Title
+		</div>
+		<div id="app">
+			<bulma-breadcrumbs>
+				<bulma-breadcrumb-link href="#">Ironhack</bulma-breadcrumb-link>
+				<bulma-breadcrumb-link href="#">Courses</bulma-breadcrumb-link>
+				<bulma-breadcrumb-link href="#">Webdev</bulma-breadcrumb-link>
+				<bulma-breadcrumb-link active href="#">Full-time</bulma-breadcrumb-link>
+			</bulma-breadcrumbs>
+			<message header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp." color="success">
+			</message>
+			<button v-for="country in countries" @click="active=country.name" class="button modal-button is-large">{{country.name}}</button>
+			<bulma-modal v-on:closing="close" :active="active" v-for="country in countries" :head="country.name" :body="country.capital">
+			</bulma-modal>
+		</div>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
 </body>
+
 </html>
