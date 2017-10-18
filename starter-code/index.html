@@ -5,12 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- TODO: include Bulma's style and your own style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>Vue.js | Bulma</title>
 </head>
 <body>
-
   <!-- TODO: Include your Vue.js app -->
-  
+  <script src="https://unpkg.com/vue"></script>
+  <div id="app">
+    <h1 class="title">Welcome to my Bulma website</h1>
+    <message header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp."></message>
+    <message header="Close" body="You can close me by clicking on the top-right cross (X)"></message>
+    <country v-for="(country, key) in countries" :country="country.name" :capital="country.capital" :key="key"></country>
+    <modal head="France" body="Paris"></modal>
+  </div>
+
   <!-- TODO: Include scripts -->
+  <script src="main.js"></script>
 </body>
 </html>
