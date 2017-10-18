@@ -22,7 +22,7 @@ Vue.component("message-country", {
     return { show: true };
   },
   template: `
-  <article v-show="selected===country" :class='["message", "is-"+color]'>
+  <article v-show="show" :class='["message", "is-"+color]'>
     <div class="message-header">
       <p>{{country}}</p>
       <button @click="show =!show" class="delete" aria-label="delete"></button>
