@@ -5,12 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- TODO: include Bulma's style and your own style -->
+  <link rel="stylesheet" href="style.css">
+  <script  src="https://cdn.jsdelivr.net/npm/vue"></script>
   <title>Vue.js | Bulma</title>
 </head>
-<body>
+
+<body >
+
+  <div id="app">
 
   <!-- TODO: Include your Vue.js app -->
-  
+
+  <message-diplay v-for="message in messages" :header="message.header" :body="message.body" :color="message.color"></message-diplay>
+  <a v-for="capitale in capitales" @click="active = !active; selected = capitale.country" class="button is-primary is-large modal-button" data-target="modal">{{capitale.country}}</a>
+  <div :class="{'modal': true, 'is-active':active }">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+      <message-country v-for="capitale in capitales" :country="capitale.country" :capital="capitale.text" :color="capitale.color"></message-country>
+    </div>
+    <button @click="active = !active" class="modal-close is-large" aria-label="close"></button>
+  </div>
   <!-- TODO: Include scripts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css">
+  <script  src="main.js"></script>
+
+  </div>
 </body>
 </html>
