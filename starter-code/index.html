@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- TODO: include Bulma's style and your own style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>Vue.js | Bulma</title>
 </head>
 <body>
+  <div class="container" id="app">
+    <h1 class="title">Vue.js and Bulma</h1>
+    <message header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp." color="link"></message>
+    <message header="Close" body="You can close me by clicking on the top right cross." color="warning"></message>
 
-  <!-- TODO: Include your Vue.js app -->
-  
-  <!-- TODO: Include scripts -->
+<div class="container" id="bulmaModal">
+  <h1 class="title">Capital modals</h1>
+    <button head="Paris" class="button is-primary"></button>
+    <button head="Paris" class="button is-primary"></button>
+    <button head="Paris" class="button is-primary"></button>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.5.2/dist/vue.js" type="text/javascript"></script>
+  <script src="script.js"></script>
 </body>
 </html>
