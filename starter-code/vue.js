@@ -55,11 +55,18 @@ Vue.component('bulmaBreadcrumbs', {
 	template: `
 		<nav class="breadcrumb" aria-label="breadcrumbs">
 			<ul>
-			<bulmaBreadcrumbsLink>
-			<template slot-scope="props">
-				{{props.li}}
-			</template>
-			</bulmaBreadcrumbsLink>
+			<bulma-breadcrumbs-link>
+
+			</bulma-breadcrumbs-link>
+			<bulma-breadcrumbs-link>
+
+			</bulma-breadcrumbs-link>
+			<bulma-breadcrumbs-link>
+
+			</bulma-breadcrumbs-link>
+			<bulma-breadcrumbs-link>
+
+			</bulma-breadcrumbs-link>
 			</ul>
 		</nav>
 	`
@@ -72,9 +79,9 @@ Vue.component('bulmaBreadcrumbsLink', {
 		href: String,
 	},
 	template: `
-		<div class="element">
-		<slot><li  lass="'active'"><a href="#" :aria-current="active?'page':''"></a></li></slot
-		</div>
+		<li  class="{'is-active':active}"><a href="#" :aria-current="{'page':active}">
+		<slot></slot>
+		</a></li>
 		`
 })
 
