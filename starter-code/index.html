@@ -1,16 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- TODO: include Bulma's style and your own style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
   <title>Vue.js | Bulma</title>
 </head>
-<body>
 
+<body>
   <!-- TODO: Include your Vue.js app -->
-  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
+
+
+
+
+  <div class="container" id="bulma">
+
+
+    <bulma-breadcrumbs>
+      <bulma-breadcrumb-link v-for="element in navElements" :is-active="element.active" :text="element.text"></bulma-breadcrumb-link>
+
+    </bulma-breadcrumbs>
+
+    <bulma-message :class="message.color" :header="message.header" :color="message.color">
+      <div class="message-body">
+        {{message.body}}
+      </div>
+    </bulma-message>
+
+
+    <div>Capital modals
+      <br>
+      <br>
+      <div class="field is-grouped">
+        <p class="control" v-for="item in countries">
+          <button class="button is-link" @click="item.modalIsVisible=true">{{item.text}}</button>
+          <bulma-modal :country="item.text" :capital="item.textCapital" :is-visible="item.modalIsVisible" @delete="hideModal(item.id)"></bulma-modal>
+        </p>
+      </div>
+
+      <!-- <button type="button" data-toggle="modal" @click="changeStatus">France</button>
+      <bulma-modal head="France" body=" Paris"></bulma-modal>
+
+      <button data-toggle="modal" @click="">Spain</button>
+      <bulma-modal head="Spain" body="Madrid" isVisible="false"></bulma-modal>
+
+      <button data-toggle="modal" @click="">United-States</button>
+      <bulma-modal head="United-States" body="Washington"></bulma-modal> -->
+
+    </div>
+
+
+
+  </div>
   <!-- TODO: Include scripts -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>
