@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   <!-- TODO: include Bulma's style and your own style -->
   <title>Vue.js | Bulma</title>
 </head>
+
 <body>
+  <script src="https://unpkg.com/vue"></script>
+  <div class="container">
+    <h2>Bulma site</h2>
+  </div>
+  <div id="app">
+    <message-item message="hi1" title="Title1"></message-item>
+    <message-item message="hi2" title="Title2"></message-item>
+    <a class="button is-primary is-large modal-button" data-target="new-modal" @click="activateModal('france')">France</a>
+    <a class="button is-primary is-large modal-button" data-target="new-modal" @click="activateModal('spain')">Spain</a>
+    <a class="button is-primary is-large modal-button" data-target="new-modal" @click="activateModal('usa')">United-States</a>
+    <new-modal @closeclick="activateModal('france')" message="The capital of France is Paris" title="France" :is-active="france"></new-modal>
+    <new-modal @closeclick="activateModal('spain')" message="The capital of Spain is Madrid" title="Spain" :is-active="spain"></new-modal>
+    <new-modal @closeclick="activateModal('usa')" message="The capital of the USA is Washington" title="USA" :is-active="usa"></new-modal>
+    <bulma-breadcrumbs>
+      <bulma-breadcrumb-link></bulma-breadcrumb-link>
+    </bulma-breadcrumbs>
+  </div>
+
+
 
   <!-- TODO: Include your Vue.js app -->
-  
+  <script></script>
   <!-- TODO: Include scripts -->
+  <script type="text/javascript" src="index.js"></script>
+
+
 </body>
+
 </html>
