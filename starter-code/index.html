@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- TODO: include Bulma's style and your own style -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+  <link rel="stylesheet" href='style.css'>
   <title>Vue.js | Bulma</title>
 </head>
+
 <body>
 
-  <!-- TODO: Include your Vue.js app -->
-  
-  <!-- TODO: Include scripts -->
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <bulma-bread-crumbs>
+      <bulma-bread-crumb-link content="Ironhack"></bulma-bread-crumb-link>
+      <bulma-bread-crumb-link content="Full-time"></bulma-bread-crumb-link>
+      <bulma-bread-crumb-link content="Hello World"></bulma-bread-crumb-link>
+      <bulma-bread-crumb-link content="Web Dev"></bulma-bread-crumb-link>
+
+    </bulma-bread-crumbs>
+  </nav>
+
+
+  <div class=" container ">
+    <h1 class="title is-3 "> Hi everybody</h1>
+    <div id="example">
+      <bulma-message header="Hello Ironhacker " body="I created this awesome website during my Ironhack bootcamp. " isSeen=true></bulma-message>
+      <bulma-message header="Close " body="You can close me by clicking on the cross the top right " isSeen=true></bulma-message>
+      <bulma-message header="I like cheese " body="Do you know why I love cheese ? " isSeen=true></bulma-message>
+
+      <br>
+
+    </div>
+    <h1 class="title is-3 "> Nice country</h1>
+    <div id="picorino">
+      <bulma-modal head="France " body="Do you know why I love cheese ? "></bulma-modal>
+      <bulma-modal head="GB " body="Do you know why I love cheese ? "></bulma-modal>
+      <bulma-modal head="USA " body="Do you know why I love cheese ? "></bulma-modal>
+    </div>
+
+
+    <!-- TODO: Include your Vue.js app -->
+    <!-- TODO: Include scripts -->
+    <script type="text/javascript " src="index.js "></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js "></script>
 </body>
+
 </html>

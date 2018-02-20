@@ -1,0 +1,10 @@
+#picorino {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+}
