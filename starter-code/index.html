@@ -14,27 +14,48 @@
 <body>
   <!-- TODO: Include your Vue.js app -->
   <div id="app" class="container">
+
+    <section class="section" id="breadcrumb-area">
+      <bulma-breadcrumbs>
+        <bulma-breadcrumb-link href="#">Ironhack</bulma-breadcrumb-link>
+        <bulma-breadcrumb-link href="#">Courses</bulma-breadcrumb-link>
+        <bulma-breadcrumb-link href="#">Webdev</bulma-breadcrumb-link>
+        <bulma-breadcrumb-link active href="#">Full-time</bulma-breadcrumb-link>
+      </bulma-breadcrumbs>
+    </section>
+
     <section id="title-area" class="section">
-      <h2>
+
+      <h2 class="title">
         {{ title }}
       </h2>
+
     </section>
 
     <section id="content-area" class="section">
+
       <bulma-message v-if="messageShowing" header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp."
         @hide="hideMessage">
       </bulma-message>
 
+      <button @click="showModal(0)" class="button is-info"> {{ countries[0].name }} </button>
+      <button @click="showModal(1)" class="button is-primary"> {{ countries[1].name }} </button>
+      <button @click="showModal(2)" class="button is-warning"> {{ countries[2].name }} </button>
 
     </section>
 
+    <!-- Can also be done directly without v-for -->
+    <section id="modal-area" class="section"></section>
+    <bulma-modal v-for="(country, index) in countries" @close-modal="closeModal(index)" :header="country.name" :body="country.capital"
+      :active="country.active" :key="index"></bulma-modal>
 
 
 
   </div>
 
   <!-- TODO: Include scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="components.js"></script>
   <script src="app.js"></script>
 </body>
 
