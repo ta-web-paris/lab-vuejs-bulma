@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- TODO: include Bulma's style and your own style -->
   <title>Vue.js | Bulma</title>
-</head>
-<body>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+</head>
+
+<body>
   <!-- TODO: Include your Vue.js app -->
-  
+  <div id="app" class="container">
+    <section id="title-area" class="section">
+      <h2>
+        {{ title }}
+      </h2>
+    </section>
+
+    <section id="content-area" class="section">
+      <bulma-message v-if="messageShowing" header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp."
+        @hide="hideMessage">
+      </bulma-message>
+
+
+    </section>
+
+
+
+
+  </div>
+
   <!-- TODO: Include scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
