@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- TODO: include Bulma's style and your own style -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
   <title>Vue.js | Bulma</title>
 </head>
+
 <body>
+  <div id="app">
+    <h1 class="container">
+      <bulma-message class="message" header="yolo" body="blabla"></bulma-message>
+      <bulma-message class="message" header="Hello Ironhacker" body="miam">Beep beep</bulma-message>
+    </h1>
+    <br>
+    <button class="button is-primary" @click="franceIsActive = true">France</button>
+    <bulma-modal :modal-active="franceIsActive" @close-modal="franceIsActive=false" country="the capital is Paris">
+    </bulma-modal>
+    <button class="button is-primary" @click="spainIsActive = true">Spain</button>
+    <bulma-modal :modal-active="spainIsActive" @close-modal="spainIsActive=false" country="the capital is Madrid">
+    </bulma-modal>
+    <button class="button is-primary" @click="usIsActive = true">United States</button>
+    <bulma-modal :modal-active="usIsActive" @close-modal="usIsActive=false" country="the capital is Washington DC">
+    </bulma-modal>
+
+    <bulma-breadcrumbs>
+      <bulma-breadcrumb-link href="#">Ironhack</bulma-breadcrumb-link>
+      <bulma-breadcrumb-link href="#">Courses</bulma-breadcrumb-link>
+      <bulma-breadcrumb-link href="#">Webdev</bulma-breadcrumb-link>
+      <bulma-breadcrumb-link active href="#">Full-time</bulma-breadcrumb-link>
+    </bulma-breadcrumbs>
+
+  </div>
+
+
 
   <!-- TODO: Include your Vue.js app -->
-  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="app.js"> </script>
   <!-- TODO: Include scripts -->
 </body>
+
 </html>
