@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- TODO: include Bulma's style and your own style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
   <title>Vue.js | Bulma</title>
 </head>
-<body>
 
-  <!-- TODO: Include your Vue.js app -->
-  
-  <!-- TODO: Include scripts -->
+<body>
+  <script src="https://unpkg.com/vue"></script>
+
+  <div class="container" id="app">
+    <h1>Welcome to my Bulma website</h1>
+    <bulma-message header="Hello Ironhacker" body="I created this awesome website during my Ironhack bootcamp."></bulma-message>
+    <a class="button is-primary is-large modal-button" data-target="bulma-modal" @click="franceActive=true">Paris</a>
+    <a class="button is-primary is-large modal-button" data-target="bulma-modal" @click="spainActive=true">Spain</a>
+    <a class="button is-primary is-large modal-button" data-target="bulma-modal" @click="usaActive=true">USA</a>
+    <bulma-modal title="France" body="The capital is Paris" :is-active="franceActive" @close="franceActive=false"></bulma-modal>
+    <bulma-modal title="Spain" body="The capital is Madrid" :is-active="spainActive" @close="spainActive=false"></bulma-modal>
+    <bulma-modal title="USA" body="The capital is Washington" :is-active="usaActive" @close="usaActive=false"></bulma-modal>
+  </div>
+
+
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <script src="./index.js"></script>
 </body>
-</html>
